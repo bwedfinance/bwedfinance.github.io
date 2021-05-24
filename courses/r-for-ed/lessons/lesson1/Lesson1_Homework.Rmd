@@ -1,0 +1,34 @@
+---
+title: "Lesson 1 Homework"
+output: html_notebook
+---
+
+**Deadline: ** Wednesday, June 10 11:59pm
+
+The exercise for this week has three parts. 
+
+* Create an account on GitHub.com and send us an email with your GitHub username. 
+* Complete the intro to GitHub module (~ 20 minutes).
+* Complete the exercise below.
+
+### Exercise
+
+Create a lesson1 folder inside your folder for this class
+In that folder, create the following folders
+
+* raw_data
+* processed_data
+* results
+
+Download this datafile - https://ocrdata.ed.gov/assets/ocr/docs/2017-18-crdc-data.zip
+and save it in your 'raw_data' folder
+
+
+```{r}
+library(tidyverse)
+
+### Import desegregation dataset from the Civil Rights Data Collection
+deseg <- read_csv("~/raw_data/2017-18 Public-Use Files/Data/LEA/CRDC/CSV/LEA Characteristics.csv") %>% 
+  filter(LEA_DESEGPLAN == "Yes") # Desegregation Order or Plan (LEA): Is the LEA covered by a desegregation order or plan?
+```
+
